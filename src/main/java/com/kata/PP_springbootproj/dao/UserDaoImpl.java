@@ -3,7 +3,8 @@ package com.kata.PP_springbootproj.dao;
 import com.kata.PP_springbootproj.model.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
+
+import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> getUsers() {
-        Query query = em.createQuery("from User ");
+        TypedQuery<User> query = em.createQuery("from User", User.class);
         return query.getResultList();
     }
 
