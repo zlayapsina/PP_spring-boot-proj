@@ -5,12 +5,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import org.springframework.stereotype.Component;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Component
 @Table(name = "users")
 public class User implements Serializable {
 
@@ -33,12 +31,6 @@ public class User implements Serializable {
     private int age;
 
     public User() {
-    }
-
-    public User(String name, String surname, int age) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
     }
 
     public long getId() {

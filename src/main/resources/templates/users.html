@@ -22,7 +22,7 @@
         <td style="border:1px solid black;">
             <a th:href="@{/edit(id=${user.id})}"><input type="submit" value="edit"/></a></td>
         <td style="border:1px solid black;">
-            <form th:method="POST" th:action="@{/delete(id=${user.id})}">
+            <form th:method="DELETE" th:action="@{/delete(id=${user.id})}">
                 <input type="submit" value="delete"/>
             </form>
         </td>
